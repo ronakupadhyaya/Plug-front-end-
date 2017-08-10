@@ -13,7 +13,7 @@ import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
 const deviceWidth = Dimensions.get('window').width;
-const headerLogo = require('../../../images/Header-Logo.png');
+const headerLogo = require('../../../images/WhiteFlower.png');
 
 
 class Home extends Component {
@@ -65,7 +65,7 @@ class Home extends Component {
                   <Image style={styles.newsPoster} source={require('../../../images/NewsIcons/1.jpg')} >
                     <View style={styles.swiperTextContent} >
                       <Text numberOfLines={2} style={styles.newsPosterHeader}>
-                          Flat App is a style of interface design emphasizing minimal use of stylistic elements.
+                         This will be dope shit bro
                         </Text>
                       <Grid style={styles.swiperContentBox}>
                         <Col style={{ flexDirection: 'row' }}>
@@ -89,7 +89,7 @@ class Home extends Component {
                   <Image style={styles.newsPoster} source={require('../../../images/NewsIcons/3.jpg')}>
                     <View style={styles.swiperTextContent}>
                       <Text numberOfLines={2} style={styles.newsPosterHeader}>
-                            So that the applications are able to load faster and resize easily.
+                            Plus more dope shit
                         </Text>
                       <Grid style={styles.swiperContentBox}>
                         <Col style={{ flexDirection: 'row' }}>
@@ -113,7 +113,7 @@ class Home extends Component {
                   <Image style={styles.newsPoster} source={require('../../../images/NewsIcons/4.jpg')}>
                     <View style={styles.swiperTextContent}>
                       <Text numberOfLines={2} style={styles.newsPosterHeader}>
-                            But still look sharp on high-definition screens.
+                            And then even more
                         </Text>
                       <Grid style={styles.swiperContentBox}>
                         <Col style={{ flexDirection: 'row' }}>
@@ -140,7 +140,7 @@ class Home extends Component {
             <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
               <View style={styles.newsContent}>
                 <Text numberOfLines={2} style={styles.newsHeader}>
-                      Flat App is focused on a minimal use of simple elements, typography and flat colors.
+                      FIRE CONTENT
                   </Text>
                 <Grid style={styles.swiperContentBox}>
                   <Col style={{ flexDirection: 'row' }}>
@@ -162,7 +162,7 @@ class Home extends Component {
             <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
               <View style={styles.newsContent}>
                 <Text numberOfLines={2} style={styles.newsHeader}>
-                      Highly customizable widgets are part of our never ending mission.
+                      HEAT, FLAMES, DAB
                   </Text>
                 <Grid style={styles.swiperContentBox}>
                   <Col style={{ flexDirection: 'row' }}>
@@ -184,7 +184,7 @@ class Home extends Component {
             <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
               <View style={styles.newsContent}>
                 <Text numberOfLines={2} style={styles.newsHeader}>
-                      Ready to use components built using NativeBase.
+                     twice as dank as before
                   </Text>
                 <Grid style={styles.swiperContentBox}>
                   <Col style={{ flexDirection: 'row' }}>
@@ -206,7 +206,7 @@ class Home extends Component {
             <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
               <View style={styles.newsContent}>
                 <Text numberOfLines={2} style={styles.newsHeader}>
-                      Theme your app with one single file.
+                      fam
                   </Text>
                 <Grid style={styles.swiperContentBox}>
                   <Col style={{ flexDirection: 'row' }}>
@@ -229,7 +229,7 @@ class Home extends Component {
             <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
               <View style={styles.newsContent}>
                 <Text numberOfLines={2} style={styles.newsHeader}>
-                      It is easier with Flat App design to quickly convey information while still looking visually appealing and approachable.
+                      Like look, it's flame get used to it
                   </Text>
                 <Grid style={styles.swiperContentBox}>
                   <Col style={{ flexDirection: 'row' }}>
@@ -251,7 +251,7 @@ class Home extends Component {
             <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
               <View style={styles.newsContent}>
                 <Text numberOfLines={2} style={styles.newsHeader}>
-                      NativeBase builds a layer on top of React Native that provides, basic set of components for mobile application development.
+                     don't you ever get it twisted
                   </Text>
                 <Grid style={styles.swiperContentBox}>
                   <Col style={{ flexDirection: 'row' }}>

@@ -68,12 +68,12 @@ class SideBar extends Component {
                   <Col>
                     <TouchableOpacity onPress={() => { Actions.login({ type: ActionConst.RESET  }); this.props.closeDrawer(); }} style={{ alignSelf: 'flex-start' }}>
                       <Text style={{ fontWeight: 'bold', color: '#fff' }}>LOG OUT</Text>
-                      <Text note style={{ color: '#fff' }} >Kumar Sanket</Text>
+                      <Text note style={{ color: '#fff' }} >Jilani Ghafur</Text>
                     </TouchableOpacity>
                   </Col>
                   <Col>
                     <TouchableOpacity style={{ alignSelf: 'flex-end' }} onPress={() => { Actions.profile(); this.props.closeDrawer(); }}>
-                      <Thumbnail source={require('../../../images/contacts/sanket.png')} style={styles.profilePic} />
+                      <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic} />
                     </TouchableOpacity>
                   </Col>
                 </Grid>

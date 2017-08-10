@@ -16,7 +16,7 @@ import TabThree from './tabThree';
 
 import CustomTabBar from './CustomTabBar';
 
-const headerLogo = require('../../../images/Header-Logo.png');
+const headerLogo = require('../../../images/WhiteFlower.png');
 
 class Channels extends Component {
 

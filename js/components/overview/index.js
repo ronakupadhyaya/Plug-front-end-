@@ -15,7 +15,7 @@ import theme from '../../themes/base-theme';
 import styles from './styles';
 
 
-const headerLogo = require('../../../images/Header-Logo.png');
+const headerLogo = require('../../../images/WhiteFlower.png');
 
 class Overview extends Component {
 

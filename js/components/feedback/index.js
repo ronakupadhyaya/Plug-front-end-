@@ -40,7 +40,7 @@ class Feedback extends Component {
   render() {
     return (
       <Container contentOffset={this.state.offset} scrollEnabled={false} >
-        <Image source={require('../../../images/BG-signUp.png')} style={styles.container} >
+        <Image source={require('../../../images/glow2.png')} style={styles.container} >
           <Header>
             <Left>
               <Button transparent onPress={this.props.openDrawer} >
@@ -48,7 +48,7 @@ class Feedback extends Component {
               </Button>
             </Left>
             <Body>
-              <Image source={require('../../../images/Header-Logo.png')} style={styles.imageHeader} />
+              <Image source={require('../../../images/WhiteFlower.png')} style={styles.imageHeader} />
             </Body>
             <Right>
               <Button transparent onPress={() => Actions.login({ type: ActionConst.RESET  })}>

@@ -7,8 +7,8 @@ import { Container, Content, Text, Item, Input, Button, Icon, View, Left, Right 
 import styles from './styles';
 import commonColor from '../../../native-base-theme/variables/commonColor';
 
-const bg = require('../../../images/BG.png');
-const logo = require('../../../images/logo.png');
+const bg = require('../../../images/Landing.png');
+const logo = require('../../../images/LifeFlower.png');
 
 class Login extends Component {
 

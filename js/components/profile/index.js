@@ -30,14 +30,14 @@ class Profile extends Component {
           <Content showsVerticalScrollIndicator={false}>
             <View style={styles.profileInfoContainer}>
               <TouchableOpacity style={{ alignSelf: 'center' }}>
-                <Thumbnail source={require('../../../images/contacts/sanket.png')} style={styles.profilePic} />
+                <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic} />
               </TouchableOpacity>
               <View style={styles.profileInfo}>
                 <TouchableOpacity>
-                  <Text style={styles.profileUser}>Kumar Sanket</Text>
+                  <Text style={styles.profileUser}>Jilani Ghafur</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Text note style={styles.profileUserInfo}>CEO, GeekyAnts</Text>
+                  <Text note style={styles.profileUserInfo}>Finesse Master</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -69,7 +69,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/1.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        Flat App is focussed on a minimal use of simple elements.
+                                        As DK Khaled once said, don't you ever play yourself
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
@@ -89,7 +89,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/3.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        So that the applications are able to load faster and reaize easily.
+                                        This will be dope shit bro
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
@@ -108,7 +108,7 @@ class Profile extends Component {
               <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.home()}>
                 <Image source={require('../../../images/NewsIcons/4.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
-                  <Text numberOfLines={2} style={styles.newsHeader}>But still look sharp on high-definition screens.</Text>
+                  <Text numberOfLines={2} style={styles.newsHeader}>Flames bruh</Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
                       <TouchableOpacity>
@@ -128,7 +128,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/10.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        Highly customizable widgets are part of our never ending mission.
+                                        Trust me Danny
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
@@ -148,7 +148,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/9.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        Ready to use components built using NativeBase.
+                                     Front end is the wave
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
@@ -167,7 +167,7 @@ class Profile extends Component {
               <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.home()}>
                 <Image source={require('../../../images/NewsIcons/12.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
-                  <Text numberOfLines={2} style={styles.newsHeader}>Theme your app with one single file.</Text>
+                  <Text numberOfLines={2} style={styles.newsHeader}>I dont fux with lames</Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
                       <TouchableOpacity>

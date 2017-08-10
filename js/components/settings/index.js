@@ -58,7 +58,7 @@ class Settings extends Component {
           </Left>
 
           <Body>
-            <Image source={require('../../../images/Header-Logo.png')} style={styles.imageHeader} />
+            <Image source={require('../../../images/WhiteFlower.png')} style={styles.imageHeader} />
           </Body>
           <Right>
             <Button
@@ -82,7 +82,7 @@ class Settings extends Component {
                 </Col>
                 <Col>
                   <TouchableOpacity style={{ alignSelf: 'center' }}>
-                    <Thumbnail source={require('../../../images/contacts/sanket.png')} style={styles.profilePic} />
+                    <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic} />
                   </TouchableOpacity>
                 </Col>
                 <Col>

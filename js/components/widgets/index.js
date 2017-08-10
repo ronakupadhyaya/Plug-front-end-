@@ -27,7 +27,7 @@ class Widgets extends Component {
             </Left>
 
             <Body>
-              <Image source={require('../../../images/Header-Logo.png')} style={styles.imageHeader} />
+              <Image source={require('../../../images/WhiteFlower.png')} style={styles.imageHeader} />
             </Body>
 
             <Right>

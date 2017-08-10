@@ -9,7 +9,7 @@ import { openDrawer } from '../../actions/drawer';
 import styles from './styles';
 
 
-const headerLogo = require('../../../images/Header-Logo.png');
+const headerLogo = require('../../../images/WhiteFlower.png');
 
 class HeaderContent extends Component {
 

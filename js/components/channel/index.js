@@ -11,7 +11,7 @@ import { openDrawer } from '../../actions/drawer';
 
 import styles from './styles';
 
-const headerLogo = require('../../../images/Header-Logo.png');
+const headerLogo = require('../../../images/WhiteFlower.png');
 const primary = require('../../themes/variable').brandPrimary;
 
 class Channel extends Component {
