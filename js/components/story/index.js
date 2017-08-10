@@ -3,7 +3,7 @@ import { Image, View, TouchableOpacity, Platform, Slider, Dimensions } from 'rea
 import { connect } from 'react-redux';
 
 import { Actions } from 'react-native-router-flux';
-import { Container, Header, Content, Text, Button, Icon, Body } from 'native-base';
+import { Container, Header, Content, Text, Button, Icon, Body, ActionSheet} from 'native-base';
 import { Grid, Col } from 'react-native-easy-grid';
 
 import Lightbox from 'react-native-lightbox';
@@ -13,6 +13,18 @@ import { openDrawer } from '../../actions/drawer';
 
 import theme from '../../themes/base-theme';
 import styles from './styles';
+
+var EDITPROJECTBUTTONS = [
+  { text: "Change Project Photo", icon: "american-football", iconColor: "#2c8ef4" },
+  { text: "Change Description", icon: "analytics", iconColor: "#f42ced" },
+  { text: "Add Collaborators", icon: "analytics", iconColor: "#f42ced" },
+  { text: "Edit Content", icon: "analytics", iconColor: "#f42ced" },
+  { text: "Delete", icon: "trash", iconColor: "#fa213b" },
+  { text: "Cancel", icon: "close", iconColor: "#25de5b" }
+];
+var DESTRUCTIVE_INDEX = 4;
+var CANCEL_INDEX = 5;
+
 
 const deviceWidth = Dimensions.get('window').width;
 const primary = require('../../themes/variable').brandPrimary;
@@ -89,7 +101,25 @@ class Story extends Component {
                   </TouchableOpacity>
                 </Image>
               </View>
-              <View style={{ backgroundColor: '#fff' }}>
+                <View style={{ backgroundColor: '#fff' }}>
+                <TouchableOpacity>
+                  <Button
+                    onPress={() =>
+                ActionSheet.show(
+                {
+                options: EDITPROJECTBUTTONS,
+                cancelButtonIndex: CANCEL_INDEX,
+                destructiveButtonIndex: DESTRUCTIVE_INDEX,
+                title: 'Testing ActionSheet',
+                },
+                buttonIndex => {
+                this.setState({ clicked: EDITPROJECTBUTTONS[buttonIndex] });
+                }
+                )}
+                >
+                <Text>Edit Project</Text>
+                </Button>
+                </TouchableOpacity>
                 <View style={styles.newsContent}>
                   <Grid style={{ paddingBottom: 20 }}>
                     <Col style={{ flexDirection: 'row' }}>
@@ -106,7 +136,7 @@ class Story extends Component {
                     </Col>
                   </Grid>
                   <Text style={styles.newsHeader}>
-                      React Native Flat App Theme, a fascinating React Native starter kit with flat UI design, Redux and NativeBase components for your application.
+                      Write page or na???React Native Flat App Theme, a fascinating React Native starter kit with flat UI design, Redux and NativeBase components for your application.
                   </Text>
                 </View>
 

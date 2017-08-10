@@ -5,13 +5,23 @@ import { connect } from 'react-redux';
 import { Image, View, TouchableOpacity } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
-import { Container, Content, Text, Thumbnail } from 'native-base';
+import { Container, Content, Text, Thumbnail, ActionSheet, Button } from 'native-base';
 import { Grid, Col } from 'react-native-easy-grid';
 import HeaderContent from './../headerContent/';
 import { openDrawer } from '../../actions/drawer';
 
 import theme from '../../themes/base-theme';
 import styles from './styles';
+
+var PROFILEBUTTONS = [
+  { text: "Upload Cover Photo", icon: "american-football", iconColor: "#2c8ef4" },
+  { text: "Change Description", icon: "analytics", iconColor: "#f42ced" },
+  { text: "Edit Social Media Handles", icon: "analytics", iconColor: "#f42ced" },
+  { text: "Cancel", icon: "close", iconColor: "#25de5b" }
+];
+
+var CANCEL_INDEX = 4;
+
 
 class Profile extends Component {
 
@@ -20,7 +30,10 @@ class Profile extends Component {
       key: React.PropTypes.string,
     }),
   }
-
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     return (
       <Container>
@@ -38,6 +51,30 @@ class Profile extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity>
                   <Text note style={styles.profileUserInfo}>Finesse Master</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Button
+                    onPress={() =>
+            ActionSheet.show(
+              {
+                options: PROFILEBUTTONS,
+                cancelButtonIndex: CANCEL_INDEX,
+                title: 'Testing ActionSheet',
+              },
+              buttonIndex => {
+                this.setState({ clicked: PROFILEBUTTONS[buttonIndex] });
+              }
+            )}
+                >
+            <Text>Edit Profile</Text>
+          </Button>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.newProject()}>
+
+
+                    <Text> Add Project </Text>
+
                 </TouchableOpacity>
               </View>
             </View>
@@ -69,7 +106,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/1.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        As DK Khaled once said, don't you ever play yourself
+                                        "As DK Khaled once said, don't you ever play yourself"
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
