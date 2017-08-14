@@ -18,6 +18,7 @@ class SignUp extends Component {
         x: 0,
         y: 0,
       },
+      username: '',
       email: '',
       password: ''
     };
@@ -26,15 +27,33 @@ class SignUp extends Component {
     };
   }
 
-  handleEmail(e) {
-    this.setState({ email: e.target });
+  onRegister() {
+    console.log("In register");
+    // fetch('https://localhost:3000/register', {
+    fetch('https://polar-forest-14512.herokuapp.com/register', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password,
+      })
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      /* do something with responseJson and go back to the Login view but
+      * make sure to check for responseJson.success! */
+      if(responseJson.success){
+        console.log("Register success")
+        Actions.login();
+      }
+    })
+    .catch((err) => {
+      /* do something if there was an error with fetching */
+      console.log('Error in register', err);
+    });
   }
-
-  handlePassword(e) {
-    console.log(e);
-    this.setState({ password: e.target });
-  }
-
 
   render() {
     return (
@@ -54,6 +73,7 @@ class SignUp extends Component {
                 <Input
                   placeholder="Username" style={styles.input}
                   placeholderTextColor="#FFF"
+                  onChangeText={ (username) => this.setState({ username: username }) }
                 />
               </Item>
 
@@ -62,7 +82,7 @@ class SignUp extends Component {
                 <Input
                   placeholder="Email" style={styles.input}
                   placeholderTextColor="#FFF"
-                  onChange={(e) => { this.handleEmail(e); }}
+                  onChangeText={ (email) => this.setState({ email: email }) }
                 />
               </Item>
 
@@ -71,13 +91,14 @@ class SignUp extends Component {
                 <Input
                   placeholder="Password" secureTextEntry style={styles.input}
                   placeholderTextColor="#FFF"
-                  onChange={(e) => { this.handlePassword(e); }}
+                  onChangeText={ (password) => this.setState({ password: password }) }
                 />
               </Item>
 
               <Button
                 rounded bordered block
-                onPress={() => Actions.pop()}
+                // onPress={() => Actions.pop()}
+                onPress={ () => {this.onRegister()} }
                 style={styles.signupBtn}
               >
                 <Text style={{ color: '#FFF' }}>Continue</Text>
