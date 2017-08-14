@@ -46,7 +46,7 @@ class Login extends Component {
                 <Input
                   placeholder="Username"
                   onChangeText={username => this.setState({ username })}
-                  placeholderTextColor="#FFF"
+                  placeholderTextColor="#000000"
                   style={styles.input}
                 />
               </Item>
@@ -56,7 +56,7 @@ class Login extends Component {
                 <Input
                   placeholder="Password"
                   secureTextEntry
-                  placeholderTextColor="#FFF"
+                  placeholderTextColor="#000000"
                   onChangeText={password => this.setState({ password })}
                   style={styles.input}
                 />

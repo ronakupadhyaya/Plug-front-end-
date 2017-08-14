@@ -36,7 +36,7 @@ export default {
   },
   input: {
     paddingLeft: 10,
-    color: '#FFF'
+    color: '#000000'
   },
   background: {
     flex: 1,
