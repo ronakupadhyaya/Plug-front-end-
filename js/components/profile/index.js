@@ -32,9 +32,30 @@ class Profile extends Component {
   }
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { projects: [] };
   }
+
+  componentWillMount() {
+
+    // fetch('https://polar-forest-14512.herokuapp.com/projects')
+    fetch('https://fb857cd0.ngrok.io/projects')
+    .then((responseJson) => {
+      return responseJson.json();
+    })
+    .then((responseJson) => {
+      console.log("componentDidMount", responseJson);
+      this.setState({
+        projects: responseJson.projects
+      });
+    })
+    .catch((err) => {
+      console.log('Error in profile', err);
+    });
+
+  }
+
   render() {
+    console.log("In render", this.state);
     return (
       <Container>
         <Image source={require('../../../images/glow2.png')} style={styles.container} >
@@ -219,6 +240,29 @@ class Profile extends Component {
                   </Grid>
                 </View>
               </TouchableOpacity>
+              {this.state.projects.map((project) => {
+                console.log(project);
+                return (<TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.home()}>
+                  <Image source={require('../../../images/NewsIcons/12.jpg')} style={styles.newsImage} />
+                  <View style={styles.newsContent}>
+                    <Text numberOfLines={2} style={styles.newsHeader}>{project.name}</Text>
+                    <Grid style={{ marginTop: 25 }}>
+                      <Col>
+                        <TouchableOpacity>
+                          <Text style={styles.newsLink}>ART.com</Text>
+                        </TouchableOpacity>
+                      </Col>
+                      <Col>
+                        <TouchableOpacity style={styles.newsTypeView}>
+                          <Text style={styles.newsTypeText}>ART</Text>
+                        </TouchableOpacity>
+                      </Col>
+                    </Grid>
+                  </View>
+                </TouchableOpacity>
+                )
+              })
+            }
             </View>
           </Content>
         </Image>

@@ -18,12 +18,41 @@ class NewProject extends Component {
         x: 0,
         y: 0,
       },
+      name: '',
+      description: ''
     };
     this.constructor.childContextTypes = {
       theme: React.PropTypes.object,
     };
   }
 
+  onNewProject() {
+    console.log("In onNewProject");
+    fetch('https://fb857cd0.ngrok.io/project/new', {
+    // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: this.state.name || 'Name',
+        description: this.state.description || 'Description',
+      })
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("responseJson", responseJson);
+      /* do something with responseJson and go back to the Login view but
+      * make sure to check for responseJson.success! */
+      if(responseJson.success){
+        Actions.profile()
+      }
+    })
+    .catch((err) => {
+      /* do something if there was an error with fetching */
+      console.log('Error in newProject', err);
+    });
+  }
 
   render() {
 
@@ -44,10 +73,16 @@ class NewProject extends Component {
       <Content>
         <Form>
           <Item>
-            <Input placeholder="Name" />
+            <Input
+              placeholder="Name"
+              onChangeText={ (name) => this.setState({ name: name }) }
+            />
           </Item>
           <Item last>
-            <Input placeholder="Description" />
+            <Input
+              placeholder="Description"
+              onChangeText={ (description) => this.setState({ description: description }) }
+            />
           </Item>
           <Item last>
             <Input placeholder="Add Cover Photo" />
@@ -58,7 +93,11 @@ class NewProject extends Component {
         </Form>
       </Content>
 
-      <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
+      <TouchableOpacity
+        style={{ flexDirection: 'row' }}
+        // onPress={() => Actions.story()}
+        onPress={() => this.onNewProject()}
+      >
           <Text> Create Project </Text>
       </TouchableOpacity>
 
