@@ -33,7 +33,7 @@ class NewProject extends Component {
           backgroundColor={commonColor.statusBarColor}
           barStyle="light-content"
         />
-        <Image source={require('../../../images/BG-signUp.png')} style={styles.background} >
+        <Image source={require('../../../images/glow2.png')} style={styles.background} >
           <Content padder>
             <Text style={styles.signupHeader}>
                                     CREATE ACCOUNT

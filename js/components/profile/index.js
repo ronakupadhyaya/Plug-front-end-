@@ -70,7 +70,7 @@ class Profile extends Component {
           </Button>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.newProject()}>
+                <TouchableOpacity style={{ flexDirection: 'row', alignSelf: 'center' }} onPress={() => Actions.newProject()}>
 
 
                     <Text> Add Project </Text>
@@ -106,7 +106,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/1.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        "As DK Khaled once said, don't you ever play yourself"
+                                        As DJ Khaled once said, don't ever play yourself
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>

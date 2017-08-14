@@ -37,7 +37,7 @@ class Walkthrough extends Component {
                             </Text>
               <Icon name="ios-paper-outline" style={styles.imageIcons} />
               <Text numberOfLines={2} style={Platform.OS === 'android' ? styles.aText : styles.iosText}>
-                                Explore the latest news from your mobile device
+                                Sign up and add skills
                             </Text>
               <Button
                 transparent rounded
@@ -54,7 +54,7 @@ class Walkthrough extends Component {
                             </Text>
               <Icon name="ios-information-circle-outline" style={styles.imageIcons} />
               <Text numberOfLines={2} style={Platform.OS === 'android' ? styles.aText : styles.iosText}>
-                                Get News Feed of variuos domains at one place
+                                Upload Projects to showcase your work
                             </Text>
               <Button
                 transparent rounded
@@ -71,7 +71,7 @@ class Walkthrough extends Component {
                             </Text>
               <Icon name="ios-volume-up-outline" style={styles.imageIcons} />
               <Text numberOfLines={2} style={Platform.OS === 'android' ? styles.aText : styles.iosText}>
-                                Get going with the React Native Flat App Theme
+                                Connect and create content with talented people like you
                             </Text>
               <Button
                 transparent rounded
