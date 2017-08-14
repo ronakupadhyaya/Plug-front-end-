@@ -29,6 +29,38 @@ class Login extends Component {
     };
   }
 
+  onLogin() {
+    console.log("In login");
+    // fetch('https://localhost:3000/login', {
+    fetch('https://polar-forest-14512.herokuapp.com/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password,
+      })
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      /* do something with responseJson and go back to the Login view but
+      * make sure to check for responseJson.success! */
+      // console.log(responseJson)
+      if(responseJson.success) {
+        console.log("Login success");
+        Actions.walkthrough({ username: this.state.username, password: this.state.password })
+      }
+      else {
+        console.log("Login failed");
+      }
+    })
+    .catch((err) => {
+      /* do something if there was an error with fetching */
+      console.log('Error in login', err);
+    });
+  }
+
   render() {
     return (
       <Container>
@@ -65,7 +97,8 @@ class Login extends Component {
               <Button
                 rounded primary block large
                 style={styles.loginBtn}
-                onPress={() => Actions.walkthrough({ username: this.state.username, password: this.state.password })}
+                // onPress={() => Actions.walkthrough({ username: this.state.username, password: this.state.password })}
+                onPress={ () => {this.onLogin()} }
               >
                 <Text style={Platform.OS === 'android' ? { fontSize: 16, textAlign: 'center', top: -5 } : { fontSize: 16, fontWeight: '900' }}>Get Started</Text>
               </Button>
