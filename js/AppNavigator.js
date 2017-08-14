@@ -24,8 +24,8 @@ import Story from './components/story';
 import Timeline from './components/timeline';
 import Widgets from './components/widgets';
 import NeedHelp from './components/needhelp';
+import NewProject from './components/newProject';
 import { statusBarColor } from './themes/base-theme';
-
 
 const RouterWithRedux = connect()(Router);
 
@@ -109,6 +109,7 @@ class AppNavigator extends Component {
             <Scene key="story" component={Story} />
             <Scene key="timeline" component={Timeline} />
             <Scene key="widgets" component={Widgets} />
+            <Scene key="newProject" component={NewProject} />
           </Scene>
         </RouterWithRedux>
       </Drawer>
