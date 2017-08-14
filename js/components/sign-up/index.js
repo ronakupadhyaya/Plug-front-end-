@@ -18,15 +18,25 @@ class SignUp extends Component {
         x: 0,
         y: 0,
       },
+      email: '',
+      password: ''
     };
     this.constructor.childContextTypes = {
       theme: React.PropTypes.object,
     };
   }
 
+  handleEmail(e) {
+    this.setState({ email: e.target });
+  }
+
+  handlePassword(e) {
+    console.log(e);
+    this.setState({ password: e.target });
+  }
+
 
   render() {
-
     return (
       <Container>
         <StatusBar
@@ -52,6 +62,7 @@ class SignUp extends Component {
                 <Input
                   placeholder="Email" style={styles.input}
                   placeholderTextColor="#FFF"
+                  onChange={(e) => { this.handleEmail(e); }}
                 />
               </Item>
 
@@ -60,6 +71,7 @@ class SignUp extends Component {
                 <Input
                   placeholder="Password" secureTextEntry style={styles.input}
                   placeholderTextColor="#FFF"
+                  onChange={(e) => { this.handlePassword(e); }}
                 />
               </Item>
 
