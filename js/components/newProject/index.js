@@ -36,7 +36,7 @@ class NewProject extends Component {
         <Image source={require('../../../images/glow2.png')} style={styles.background} >
           <Content padder>
             <Text style={styles.signupHeader}>
-                                    CREATE ACCOUNT
+                                    New Project
                                 </Text>
             <View style={styles.signupContainer}>
 
@@ -57,6 +57,10 @@ class NewProject extends Component {
           </Item>
         </Form>
       </Content>
+
+      <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story()}>
+          <Text> Create Project </Text>
+      </TouchableOpacity>
 
             </View>
           </Content>
