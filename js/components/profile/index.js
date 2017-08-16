@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Image, View, TouchableOpacity } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
-import { Container, Content, Text, Thumbnail, ActionSheet, Button } from 'native-base';
+import { Container, Content, Text, Thumbnail, Icon, ActionSheet, Button } from 'native-base';
 import { Grid, Col } from 'react-native-easy-grid';
 import HeaderContent from './../headerContent/';
 import { openDrawer } from '../../actions/drawer';
@@ -43,19 +43,10 @@ class Profile extends Component {
           <Content showsVerticalScrollIndicator={false}>
             <View style={styles.profileInfoContainer}>
               <TouchableOpacity style={{ alignSelf: 'center' }}>
-                <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic} />
-              </TouchableOpacity>
-              <View style={styles.profileInfo}>
-                <TouchableOpacity>
-                  <Text style={styles.profileUser}>Jilani Ghafur</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Text note style={styles.profileUserInfo}>Finesse Master</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Button
+                <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic}> 
+                <Button style={{ alignSelf: 'center', backgroundColor: 'transparent', flex: 1, width: 100 }}
                     onPress={() =>
-            ActionSheet.show(
+                      ActionSheet.show(
               {
                 options: PROFILEBUTTONS,
                 cancelButtonIndex: CANCEL_INDEX,
@@ -66,14 +57,25 @@ class Profile extends Component {
               }
             )}
                 >
-            <Text>Edit Profile</Text>
+            {/* <Icon name="ios-settings-outline" /> */}
           </Button>
+                </Thumbnail>
+              </TouchableOpacity>
+              <View style={styles.profileInfo}>
+                <TouchableOpacity>
+                  <Text style={styles.profileUser}>Jilani Ghafur</Text>
                 </TouchableOpacity>
+                <TouchableOpacity>
+                  <Text note style={styles.profileUserInfo}>Finesse Master</Text>
+                </TouchableOpacity>
+                {/* <TouchableOpacity>
+        
+                </TouchableOpacity> */}
 
                 <TouchableOpacity style={{ flexDirection: 'row', alignSelf: 'center' }} onPress={() => Actions.newProject()}>
 
 
-                    <Text> Add Project </Text>
+                 <Icon name="ios-add" />
 
                 </TouchableOpacity>
               </View>
@@ -82,22 +84,22 @@ class Profile extends Component {
             <View style={styles.linkTabs}>
               <Grid>
                 <Col>
-                  <TouchableOpacity style={styles.linkTabs_header}>
+                  {/* <TouchableOpacity style={styles.linkTabs_header}>
                     <Text style={styles.linkTabs_tabCounts}>13</Text>
                     <Text note style={styles.linkTabs_tabName}>Comments</Text>
-                  </TouchableOpacity>
+                  </TouchableOpacity> */}
                 </Col>
                 <Col>
-                  <TouchableOpacity style={styles.linkTabs_header}>
+                  {/* <TouchableOpacity style={styles.linkTabs_header}>
                     <Text style={styles.linkTabs_tabCounts}>12</Text>
                     <Text note style={styles.linkTabs_tabName}>Channels</Text>
-                  </TouchableOpacity>
+                  </TouchableOpacity> */}
                 </Col>
                 <Col>
-                  <TouchableOpacity style={styles.linkTabs_header}>
+                  {/* <TouchableOpacity style={styles.linkTabs_header}>
                     <Text style={styles.linkTabs_tabCounts}>52</Text>
                     <Text note style={styles.linkTabs_tabName}>Bookmarks</Text>
-                  </TouchableOpacity>
+                  </TouchableOpacity> */}
                 </Col>
               </Grid>
             </View>
