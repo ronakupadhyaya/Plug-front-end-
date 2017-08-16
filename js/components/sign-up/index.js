@@ -29,8 +29,8 @@ class SignUp extends Component {
 
   onRegister() {
     console.log("In register");
-    // fetch('https://localhost:3000/register', {
-    fetch('https://polar-forest-14512.herokuapp.com/register', {
+    fetch('https://fb857cd0.ngrok.io/register', {
+    // fetch('https://polar-forest-14512.herokuapp.com/register', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
