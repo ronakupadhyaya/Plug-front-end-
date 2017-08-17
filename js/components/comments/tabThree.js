@@ -24,7 +24,7 @@ class TabThree extends Component {
             <Card foregroundColor="#222" style={styles.card}>
               <CardItem style={styles.cardHeader} header>
                 <Thumbnail small source={require('../../../images/contacts/sanket.png')} style={Platform.OS === 'android' ? { borderRadius: 40 } : {}} />
-                <Text style={styles.cmtName}>Kumar Sanket</Text>
+                <Text style={styles.cmtName}>Ronak Upadhyaya</Text>
                 <View style={{ flexDirection: 'row', position: 'absolute', right: 0, top: 27 }}>
                   <Icon name="ios-time-outline" style={styles.timeIcon} />
                   <Text style={styles.date}>May 24, 11:00 AM</Text>
@@ -44,7 +44,7 @@ class TabThree extends Component {
             <Card foregroundColor="#222" style={styles.card}>
               <CardItem style={styles.cardHeader} header>
                 <Thumbnail small source={require('../../../images/contacts/saurav.png')} style={Platform.OS === 'android' ? { borderRadius: 40 } : {}} />
-                <Text style={styles.cmtName}>Saurav Sahu</Text>
+                <Text style={styles.cmtName}>Jatharsan Param</Text>
                 <View style={{ flexDirection: 'row', position: 'absolute', right: 0, top: 27 }}>
                   <Icon name="ios-time-outline" style={styles.timeIcon} />
                   <Text style={styles.date}>Feb 17, 04:30 PM</Text>
@@ -62,7 +62,7 @@ class TabThree extends Component {
             <Card foregroundColor="#222" style={styles.card}>
               <CardItem style={styles.cardHeader} header>
                 <Thumbnail small source={require('../../../images/contacts/atul.png')} style={Platform.OS === 'android' ? { borderRadius: 40 } : {}} />
-                <Text style={styles.cmtName}>Atul Ranjan</Text>
+                <Text style={styles.cmtName}>Jilani Ghafur</Text>
                 <View style={{ flexDirection: 'row', position: 'absolute', right: 0, top: 27 }}>
                   <Icon name="ios-time-outline" style={styles.timeIcon} />
                   <Text style={styles.date}>Feb 03, 01:00 PM</Text>
@@ -80,7 +80,7 @@ class TabThree extends Component {
             <Card foregroundColor="#222" style={styles.card}>
               <CardItem style={styles.cardHeader} header>
                 <Thumbnail small source={require('../../../images/contacts/varun.png')} style={Platform.OS === 'android' ? { borderRadius: 40 } : {}} />
-                <Text style={styles.cmtName}>Varun Sahu</Text>
+                <Text style={styles.cmtName}>Jeremy Werden</Text>
                 <View style={{ flexDirection: 'row', position: 'absolute', right: 0, top: 27 }}>
                   <Icon name="ios-time-outline" style={styles.timeIcon} />
                   <Text style={styles.date}>Jan 12, 09:30 PM</Text>
@@ -98,7 +98,7 @@ class TabThree extends Component {
             <Card foregroundColor="#222" style={styles.card}>
               <CardItem style={styles.cardHeader} header>
                 <Thumbnail small source={require('../../../images/contacts/sanket.png')} style={Platform.OS === 'android' ? { borderRadius: 40 } : {}} />
-                <Text style={styles.cmtName}>Kumar Sanket</Text>
+                <Text style={styles.cmtName}>Ronak Upadhyaya</Text>
                 <View style={{ flexDirection: 'row', position: 'absolute', right: 0, top: 27 }}>
                   <Icon name="ios-time-outline" style={styles.timeIcon} />
                   <Text style={styles.date}>May 24, 11:00 AM</Text>
@@ -118,7 +118,7 @@ class TabThree extends Component {
             <Card foregroundColor="#222" style={styles.card}>
               <CardItem style={styles.cardHeader} header>
                 <Thumbnail small source={require('../../../images/contacts/saurav.png')} style={Platform.OS === 'android' ? { borderRadius: 40 } : {}} />
-                <Text style={styles.cmtName}>Saurav Sahu</Text>
+                <Text style={styles.cmtName}>Jatharsan Param</Text>
                 <View style={{ flexDirection: 'row', position: 'absolute', right: 0, top: 27 }}>
                   <Icon name="ios-time-outline" style={styles.timeIcon} />
                   <Text style={styles.date}>Feb 17, 04:30 PM</Text>
