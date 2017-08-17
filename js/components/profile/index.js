@@ -38,7 +38,7 @@ class Profile extends Component {
   componentWillMount() {
 
     // fetch('https://polar-forest-14512.herokuapp.com/projects')
-    fetch('https://fb857cd0.ngrok.io/projects')
+    fetch('https://localhost:3000/projects')
     .then((responseJson) => {
       return responseJson.json();
     })
@@ -127,7 +127,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/1.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        As DJ Khaled once said, don't ever play yourself
+                                        "As DJ Khaled once said, don't ever play yourself"
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>

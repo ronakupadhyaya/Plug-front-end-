@@ -120,6 +120,9 @@ class Story extends Component {
                 <Text>Edit Project</Text>
                 </Button>
                 </TouchableOpacity>
+                <TouchableOpacity style={{ flexDirection: 'row', alignSelf: 'center' }} onPress={() => Actions.searchCollab()}>
+                    <Text> Add Collaborators </Text>
+                </TouchableOpacity>
                 <View style={styles.newsContent}>
                   <Grid style={{ paddingBottom: 20 }}>
                     <Col style={{ flexDirection: 'row' }}>

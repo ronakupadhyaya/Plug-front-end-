@@ -28,7 +28,7 @@ class NewProject extends Component {
 
   onNewProject() {
     console.log("In onNewProject");
-    fetch('https://fb857cd0.ngrok.io/project/new', {
+    fetch('https://localhost:3000/project/new', {
     // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
       method: 'POST',
       headers: {
