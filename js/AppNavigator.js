@@ -25,6 +25,7 @@ import Timeline from './components/timeline';
 import Widgets from './components/widgets';
 import NeedHelp from './components/needhelp';
 import NewProject from './components/newProject';
+import SearchCollab from './components/searchCollab'
 import { statusBarColor } from './themes/base-theme';
 
 const RouterWithRedux = connect()(Router);
@@ -92,7 +93,7 @@ class AppNavigator extends Component {
         />
         <RouterWithRedux>
           <Scene key="root">
-            <Scene key="login" component={Login} hideNavBar initial={true} />
+            <Scene key="login" component={Login} hideNavBar />
             <Scene key="signUp" component={SignUp} />
             <Scene key="needhelp" component={NeedHelp} />
             <Scene key="home" component={Home} />
@@ -110,6 +111,7 @@ class AppNavigator extends Component {
             <Scene key="timeline" component={Timeline} />
             <Scene key="widgets" component={Widgets} />
             <Scene key="newProject" component={NewProject} />
+            <Scene key="searchCollab" component={SearchCollab}  initial={true}/>
           </Scene>
         </RouterWithRedux>
       </Drawer>
