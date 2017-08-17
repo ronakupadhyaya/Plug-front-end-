@@ -179,7 +179,7 @@ class Story extends Component {
                     this._pickImage();
                   }
                   else if(buttonIndex === 2){
-                    Actions.searchCollab();
+                    Actions.searchCollab({project: this.props.project});
                   }
                 this.setState({ clicked: EDITPROJECTBUTTONS[buttonIndex] });
                 }
