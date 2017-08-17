@@ -30,7 +30,7 @@ class NewProject extends Component {
     console.log("In onNewProject");
 
     if(this.state.name) {
-      fetch('https://0a4f6e79.ngrok.io/project/new', {
+      fetch('https://9fff3071.ngrok.io/project/new', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
         method: 'POST',
         headers: {
@@ -103,6 +103,13 @@ class NewProject extends Component {
         onPress={() => this.onNewProject()}
       >
           <Text> Create Project </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{ flexDirection: 'row' }}
+        // onPress={() => Actions.story()}
+        onPress={() => Actions.pop()}
+      >
+          <Text> Cancel </Text>
       </TouchableOpacity>
 
             </View>
