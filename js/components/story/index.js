@@ -203,11 +203,11 @@ class Story extends Component {
                       </TouchableOpacity>
                     </Col>
                   {/* </Grid> */}
-                   <Text>
+                   <Text style={styles.newsComment}>
                     Santa Monica
                   </Text>
                   <Text style={styles.newsHeader}>
-                    A bright shoot in SM. Show with a Sony A7 w/ a 50mm 1.8 lens
+                    A bright shoot in SM. Shot with a Sony A7 w/ a 50mm 1.8 lens
                   </Text>
                 </View>
 
@@ -264,10 +264,10 @@ class Story extends Component {
                   </Swiper>
                 </View>
 
-                <View style={{ alignSelf: 'center' }}>
-                  <Button transparent iconRight onPress={() => Actions.popTo('home')} textStyle={{ color: '#222', fontWeight: '700' }}>
-                    <Text>NEXT STORY</Text>
-                    <Icon name="ios-arrow-forward" style={styles.forwardBtn} />
+                <View style={{ alignSelf: 'center', padding: 15 }}>
+                  <Button transparent iconRight onPress={() => Actions.popTo('home')} textStyle={{ color: '#222', fontWeight: '700' }} style={{backgroundColor: 'black', padding: 20}}>
+                    <Text style={{color: 'white', alignSelf: 'center'}}>NEXT STORY</Text>
+                    {/* <Icon name="ios-arrow-forward" style={styles.forwardBtn} /> */}
                   </Button>
                 </View>
               </View>
