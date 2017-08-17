@@ -96,28 +96,7 @@ class Profile extends Component {
             <View style={styles.profileInfoContainer}>
               <TouchableOpacity style={{ alignSelf: 'center' }}>
 
-                <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic}>
-
-                <Button style={{ alignSelf: 'center', backgroundColor: 'transparent', flex: 1, width: 100 }}
-                    onPress={() =>
-                      ActionSheet.show(
-              {
-                options: PROFILEBUTTONS,
-                cancelButtonIndex: CANCEL_INDEX,
-                title: 'Testing ActionSheet',
-              },
-              buttonIndex => {
-                console.log(buttonIndex);
-                if(buttonIndex === 0){
-                  this._pickImage();
-                }
-                this.setState({ clicked: PROFILEBUTTONS[buttonIndex] });
-              }
-            )}
-                >
-          </Button>
-                </Thumbnail> */}
-
+              
 
                 {image ? (
                   <Thumbnail source={{ uri: image }} style={styles.profilePic}>
