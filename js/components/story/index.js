@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, View, TouchableOpacity, Platform, Slider, Dimensions } from 'react-native';
+import { Image, View, TouchableOpacity, Platform, Slider, Dimensions, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 
 import { Actions } from 'react-native-router-flux';
@@ -50,7 +50,8 @@ class Story extends Component {
       animationType: 'slideInDown',
       open: false,
       value: 0,
-      image: null
+      image: null,
+      modalVisible: false,
     };
   }
 
@@ -90,11 +91,18 @@ class Story extends Component {
    }
  };
 
+ setModalVisible(visible) {
+   this.setState({modalVisible: visible});
+ }
+
   render() {
     let { image } = this.state;
     console.log("Image", image);
     return (
+
       <Container style={{ backgroundColor: '#fff' }}>
+
+
         <Image source={require('../../../images/glow2.png')} style={styles.container} >
           <Header>
             <Body style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
@@ -169,6 +177,9 @@ class Story extends Component {
                 buttonIndex => {
                   if(buttonIndex === 0){
                     this._pickImage();
+                  }
+                  else if(buttonIndex === 2){
+
                   }
                 this.setState({ clicked: EDITPROJECTBUTTONS[buttonIndex] });
                 }
