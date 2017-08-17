@@ -125,18 +125,34 @@ class Story extends Component {
                 {image &&
                 <Image source={{ uri: image }} style={{ width: 200, height: 200 }} style={styles.newsPoster} />} */}
                 {image ? (
-                  <Image source={{ uri: image }}  style={styles.newsPoster} />
+                  <Image source={{ uri: image }}  style={styles.newsPoster} >
+                    <TouchableOpacity>
+                      <View style={styles.newsPosterContent}>
+                        <Text numberOfLines={2} style={styles.newsPosterHeader}>
+                          Flat App Theme
+                        </Text>
+                      </View>
+                    </TouchableOpacity>
+                  </Image>
                 ) : (
-                  <Image source={require('../../../images/NewsIcons/5.jpg')} style={styles.newsPoster} />
-                )}
+                  <Image source={require('../../../images/NewsIcons/5.jpg')} style={styles.newsPoster} >
                   <TouchableOpacity>
+                    <View style={styles.newsPosterContent}>
+                      <Text numberOfLines={2} style={styles.newsPosterHeader}>
+                        Flat App Theme
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </Image>
+              )}
+                  {/* <TouchableOpacity>
                     <View style={styles.newsPosterContent}>
                       <Text numberOfLines={2} style={styles.newsPosterHeader}>
                           Flat App Theme
                       </Text>
                     </View>
                   </TouchableOpacity>
-                {/* </Image> */}
+                </Image> */}
               </View>
                 <View style={{ backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <TouchableOpacity>
