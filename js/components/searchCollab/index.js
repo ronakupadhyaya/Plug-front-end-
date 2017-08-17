@@ -11,7 +11,7 @@ import commonColor from '../../../native-base-theme/variables/commonColor';
 
 const PickerItem = Picker.Item
 
-class NewProject extends Component {
+class SearchCollab extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +32,7 @@ class NewProject extends Component {
     console.log("In onNewProject");
 
     if(this.state.name) {
-      fetch('https://9fff3071.ngrok.io/project/new', {
+      fetch('https://0a4f6e79.ngrok.io/project/new', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
         method: 'POST',
         headers: {
@@ -75,37 +75,20 @@ class NewProject extends Component {
         />
         <Image source={require('../../../images/glow2.png')} style={styles.background} >
           <Content >
-            <Text style={styles.signupHeader}>New Project</Text>
+            <Text style={styles.signupHeader}>Add Collaborator</Text>
             <View style={styles.signupContainer}>
 
 
       <Content>
         <Form>
           <Item last style={styles.itemContainer} >
-            <Icon name='star' />
+            <Icon name='ios-search' />
             <Input
-              placeholder="Name"
+              placeholder="Add Collaborator"
               onChangeText={ (name) => this.setState({ name: name }) }
               style={{color: '#FFF'}}
             />
           </Item>
-          <Item last style={styles.itemContainer}>
-            <Icon name='paper'/>
-            <Input
-                placeholder="Description"
-              onChangeText={ (description) => this.setState({ description: description }) }
-              style={{color: '#FFF'}}
-            />
-          </Item>
-          <Item last style={styles.itemContainer}>
-            <Icon name='options'/>
-            <Input
-                placeholder="Categories"
-              onChangeText={ (description) => this.setState({ description: description }) }
-              style={{color: '#FFF'}}
-            />
-          </Item>
-
         </Form>
       </Content>
 
@@ -114,14 +97,7 @@ class NewProject extends Component {
         // onPress={() => Actions.story()}
         onPress={() => this.onNewProject()}
       >
-          <Text> Create Project </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{ flexDirection: 'row' }}
-        // onPress={() => Actions.story()}
-        onPress={() => Actions.pop()}
-      >
-          <Text> Cancel </Text>
+          <Text> Submit </Text>
       </TouchableOpacity>
 
             </View>
@@ -132,4 +108,4 @@ class NewProject extends Component {
   }
 }
 
-export default connect()(NewProject);
+export default connect()(SearchCollab);

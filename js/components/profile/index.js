@@ -96,8 +96,8 @@ class Profile extends Component {
             <View style={styles.profileInfoContainer}>
               <TouchableOpacity style={{ alignSelf: 'center' }}>
 
+                <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic}>
 
-                {/* <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic}>
                 <Button style={{ alignSelf: 'center', backgroundColor: 'transparent', flex: 1, width: 100 }}
                     onPress={() =>
                       ActionSheet.show(
@@ -212,7 +212,7 @@ class Profile extends Component {
                 <Image source={require('../../../images/NewsIcons/1.jpg')} style={styles.newsImage} />
                 <View style={styles.newsContent}>
                   <Text numberOfLines={2} style={styles.newsHeader}>
-                                        As DJ Khaled once said, don't ever play yourself
+                                        "As DJ Khaled once said, don't ever play yourself"
                                     </Text>
                   <Grid style={{ marginTop: 25 }}>
                     <Col>
