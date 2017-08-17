@@ -42,11 +42,7 @@ const renderPagination = (index, total, context) => (
 
 class Story extends Component {
 
-  static propTypes = {
-    navigation: React.PropTypes.shape({
-      key: React.PropTypes.string,
-    }),
-  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -54,6 +50,20 @@ class Story extends Component {
       open: false,
       value: 0,
     };
+  }
+
+  static propTypes = {
+    navigation: React.PropTypes.shape({
+      key: React.PropTypes.string,
+    }),
+  }
+
+  componentWillMount() {
+    console.log("Story");
+    if(this.props.project) {
+        console.log("componentWillMount", this.props.project);
+    }
+
   }
 
   modalO() {

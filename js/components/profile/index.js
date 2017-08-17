@@ -13,6 +13,21 @@ import { openDrawer } from '../../actions/drawer';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
+const images = [
+  require('../../../images/NewsIcons/1.jpg'),
+  require('../../../images/NewsIcons/2.jpg'),
+  require('../../../images/NewsIcons/3.jpg'),
+  require('../../../images/NewsIcons/4.jpg'),
+  require('../../../images/NewsIcons/5.jpg'),
+  require('../../../images/NewsIcons/6.jpg'),
+  require('../../../images/NewsIcons/7.jpg'),
+  require('../../../images/NewsIcons/8.jpg'),
+  require('../../../images/NewsIcons/9.jpg'),
+  require('../../../images/NewsIcons/10.jpg'),
+  require('../../../images/NewsIcons/11.jpg'),
+  require('../../../images/NewsIcons/12.jpg'),
+]
+
 var PROFILEBUTTONS = [
   { text: "Upload Cover Photo", icon: "american-football", iconColor: "#2c8ef4" },
   { text: "Change Description", icon: "analytics", iconColor: "#f42ced" },
@@ -38,7 +53,7 @@ class Profile extends Component {
   componentWillMount() {
 
     // fetch('https://polar-forest-14512.herokuapp.com/projects')
-    fetch('https://fb857cd0.ngrok.io/projects')
+    fetch('https://0a4f6e79.ngrok.io/projects')
     .then((responseJson) => {
       return responseJson.json();
     })
@@ -240,21 +255,26 @@ class Profile extends Component {
                   </Grid>
                 </View>
               </TouchableOpacity>
-              {this.state.projects.map((project) => {
-                console.log(project);
-                return (<TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.home()}>
-                  <Image source={require('../../../images/NewsIcons/12.jpg')} style={styles.newsImage} />
+              {this.state.projects.map((project, i) => {
+                console.log("Project", project, i);
+                var intImageUrl = parseInt(project.channel.imageUrl);
+                console.log("intImageUrl", intImageUrl, typeof(intImageUrl));
+                return (<TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => Actions.story({project: project})}>
+                  {/* <Image source={require('../../../images/NewsIcons/12.jpg')} style={styles.newsImage} /> */}
+                  <Image source={images[intImageUrl - 1]} style={styles.newsImage} />
                   <View style={styles.newsContent}>
                     <Text numberOfLines={2} style={styles.newsHeader}>{project.name}</Text>
                     <Grid style={{ marginTop: 25 }}>
                       <Col>
                         <TouchableOpacity>
-                          <Text style={styles.newsLink}>ART.com</Text>
+                          {/* <Text style={styles.newsLink}>ART.com</Text> */}
+                          <Text style={styles.newsLink}>{project.channel.category}.com</Text>
                         </TouchableOpacity>
                       </Col>
                       <Col>
                         <TouchableOpacity style={styles.newsTypeView}>
-                          <Text style={styles.newsTypeText}>ART</Text>
+                          {/* <Text style={styles.newsTypeText}>ART</Text> */}
+                          <Text style={styles.newsTypeText}>{project.channel.category}</Text>
                         </TouchableOpacity>
                       </Col>
                     </Grid>

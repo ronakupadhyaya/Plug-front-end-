@@ -18,6 +18,10 @@ const headerLogo = require('../../../images/WhiteFlower.png');
 
 class Home extends Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   static propTypes = {
     openDrawer: React.PropTypes.func,
     navigation: React.PropTypes.shape({

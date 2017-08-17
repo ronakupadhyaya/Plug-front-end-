@@ -28,30 +28,34 @@ class NewProject extends Component {
 
   onNewProject() {
     console.log("In onNewProject");
-    fetch('https://fb857cd0.ngrok.io/project/new', {
-    // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: this.state.name || 'Name',
-        description: this.state.description || 'Description',
+
+    if(this.state.name) {
+      fetch('https://0a4f6e79.ngrok.io/project/new', {
+      // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          description: this.state.description,
+        })
       })
-    })
-    .then((response) => response.json())
-    .then((responseJson) => {
-      console.log("responseJson", responseJson);
-      /* do something with responseJson and go back to the Login view but
-      * make sure to check for responseJson.success! */
-      if(responseJson.success){
-        Actions.profile()
-      }
-    })
-    .catch((err) => {
-      /* do something if there was an error with fetching */
-      console.log('Error in newProject', err);
-    });
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log("responseJson", responseJson);
+        /* do something with responseJson and go back to the Login view but
+        * make sure to check for responseJson.success! */
+        if(responseJson.success){
+          Actions.profile()
+        }
+      })
+      .catch((err) => {
+        /* do something if there was an error with fetching */
+        console.log('Error in newProject', err);
+      });
+    }
+
   }
 
   render() {
