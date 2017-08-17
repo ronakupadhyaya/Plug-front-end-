@@ -205,10 +205,10 @@ class Story extends Component {
                   {/* </Grid> */}
                    <Text style={styles.newsHeader}>
                     Santa Monica
-                  </Text> 
+                  </Text>
                   <Text style={styles.newsHeader}>
                     A bright shoot in SM. Show with a Sony A7 w/ a 50mm 1.8 lens
-                  </Text> 
+                  </Text>
                 </View>
 
                 {/* <View style={{ padding: 20 }}> */}
@@ -229,7 +229,7 @@ class Story extends Component {
                   {/* <View style={{ paddingBottom: 20 }}>
                     <Text style={styles.newsHeader}>
                      ok
-                  </Text> 
+                  </Text>
                   </View> */}
                   {/* <View style={{ paddingBottom: 20, paddingTop: 10 }}>
                     <Text style={styles.newsHeader}>
