@@ -22,21 +22,33 @@ export default {
     borderTopColor: '#ddd',
   },
   newsHeader: {
-    color: '#222',
+    color: '#fff',
     fontWeight: '500',
     fontSize: 14,
+    alignSelf: 'center',
+    padding: 15,
+    backgroundColor: 'black',
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: '#fff'
   },
   newsCommentContainer: {
     paddingLeft: 20,
     paddingRight: 20,
-    marginBottom: 10,
+    marginBottom: 20,
+    marginTop: 15,
     borderLeftWidth: 2,
     borderLeftColor: primary,
+    backgroundColor: '#95a5a6',
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: '#fff'
   },
   newsComment: {
     color: primary,
     fontWeight: '500',
     fontSize: 14,
+    padding: 8,
   },
   newsLink: {
     color: '#666',
@@ -47,13 +59,14 @@ export default {
   newsTypeView: {
     borderBottomWidth: 1,
     borderBottomColor: '#666',
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
+    width: 95
   },
   newsTypeText: {
     color: '#666',
     fontSize: 12,
     fontWeight: 'bold',
-    paddingBottom: 5,
+    paddingBottom: 5
   },
   newsPoster: {
     width: null,

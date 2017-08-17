@@ -189,46 +189,54 @@ class Story extends Component {
                 </Button>
                 </TouchableOpacity>
                 <View style={styles.newsContent}>
-                  <Grid style={{ paddingBottom: 20 }}>
-                    <Col style={{ flexDirection: 'row' }}>
+                  {/* <Grid style={{ paddingBottom: 20 }}> */}
+                    {/* <Col style={{ flexDirection: 'row' }}>
                       <TouchableOpacity>
                         <Text style={styles.newsLink}>CDC</Text>
                       </TouchableOpacity>
                       <Icon name="ios-time-outline" style={styles.timeIcon} />
                       <Text style={styles.newsLink}>1h ago</Text>
-                    </Col>
+                    </Col> */}
                     <Col>
                       <TouchableOpacity style={styles.newsTypeView}>
-                        <Text style={styles.newsTypeText}>ENVIRONMENT</Text>
+                        <Text style={styles.newsTypeText}>PHOTOSHOOT</Text>
                       </TouchableOpacity>
                     </Col>
-                  </Grid>
+                  {/* </Grid> */}
+                   <Text style={styles.newsHeader}>
+                    Santa Monica
+                  </Text> 
                   <Text style={styles.newsHeader}>
-                      Write page or na???React Native Flat App Theme, a fascinating React Native starter kit with flat UI design, Redux and NativeBase components for your application.
-                  </Text>
+                    A bright shoot in SM. Show with a Sony A7 w/ a 50mm 1.8 lens
+                  </Text> 
                 </View>
 
-                <View style={{ padding: 20 }}>
+                {/* <View style={{ padding: 20 }}> */}
                   <View style={styles.newsCommentContainer}>
                     <Text style={styles.newsComment}>
-                        It’s a responsive theme with clean and modern look highly focussed on efficiency. The flat design enables resizing the contents easily to fit various screen devices. Eye soothing color makes the React Native Flat app theme simple yet eye catchy and smooth running.
+                      Ronak - stylist
                     </Text>
-                    <Text style={styles.newsComment}>- StrapMobile</Text>
-                  </View>
-                  <Text style={styles.newsHeader}>
-                      The flat UI design adds an aesthetic touch to the native look and feel of React Native apps.
-                  </Text>
-                  <View style={{ paddingBottom: 20 }}>
-                    <Text style={styles.newsHeader}>
-                      NativeBase is a free and open source framework that enables developers to build high-quality mobile apps using React Native iOS and Android apps with a fusion of ES6.
-                  </Text>
-                  </View>
-                  <View style={{ paddingBottom: 20, paddingTop: 10 }}>
-                    <Text style={styles.newsHeader}>
-                        NativeBase builds a layer on top of React Native that provides you with basic set of components for mobile application development. This helps you to build world-class application experiences on native platforms.
+                    <Text style={styles.newsComment}>
+                      Beyonce - Model
+                    </Text>
+                    <Text style={styles.newsComment}>
+                      Jilando - photographer
                     </Text>
                   </View>
-                </View>
+                  {/* <Text style={styles.newsHeader}>
+                    ok
+                  </Text> */}
+                  {/* <View style={{ paddingBottom: 20 }}>
+                    <Text style={styles.newsHeader}>
+                     ok
+                  </Text> 
+                  </View> */}
+                  {/* <View style={{ paddingBottom: 20, paddingTop: 10 }}>
+                    <Text style={styles.newsHeader}>
+                        got it
+                    </Text>
+                  </View> */}
+                {/* </View> */}
 
                 <View style={styles.wrapper}>
                   <Swiper
