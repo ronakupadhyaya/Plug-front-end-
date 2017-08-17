@@ -10,6 +10,7 @@ import Lightbox from 'react-native-lightbox';
 import Modal from 'react-native-simple-modal';
 import Swiper from 'react-native-swiper';
 import { openDrawer } from '../../actions/drawer';
+import { ImagePicker } from 'expo';
 
 import theme from '../../themes/base-theme';
 import styles from './styles';
@@ -49,6 +50,7 @@ class Story extends Component {
       animationType: 'slideInDown',
       open: false,
       value: 0,
+      image: null
     };
   }
 
@@ -74,7 +76,23 @@ class Story extends Component {
     this.setState({ open: false });
   }
 
+  _pickImage = async () => {
+   let result = await ImagePicker.launchImageLibraryAsync({
+     allowsEditing: true,
+     aspect: [4, 3],
+   });
+
+   console.log(result);
+
+   if (!result.cancelled) {
+     this.setState({ image: result.uri });
+
+   }
+ };
+
   render() {
+    let { image } = this.state;
+    console.log("Image", image);
     return (
       <Container style={{ backgroundColor: '#fff' }}>
         <Image source={require('../../../images/glow2.png')} style={styles.container} >
@@ -101,7 +119,16 @@ class Story extends Component {
           <Content showsVerticalScrollIndicator={false}>
             <View style={{ flex: 1 }}>
               <View >
-                <Image source={require('../../../images/NewsIcons/5.jpg')} style={styles.newsPoster}>
+                {/* <Image source={require('../../../images/NewsIcons/5.jpg')} style={styles.newsPoster}> */}
+                {/* {!image &&
+                <Image source={require('../../../images/NewsIcons/5.jpg')} style={styles.newsPoster} />}
+                {image &&
+                <Image source={{ uri: image }} style={{ width: 200, height: 200 }} style={styles.newsPoster} />} */}
+                {image ? (
+                  <Image source={{ uri: image }}  style={styles.newsPoster} />
+                ) : (
+                  <Image source={require('../../../images/NewsIcons/5.jpg')} style={styles.newsPoster} />
+                )}
                   <TouchableOpacity>
                     <View style={styles.newsPosterContent}>
                       <Text numberOfLines={2} style={styles.newsPosterHeader}>
@@ -109,11 +136,12 @@ class Story extends Component {
                       </Text>
                     </View>
                   </TouchableOpacity>
-                </Image>
+                {/* </Image> */}
               </View>
-                <View style={{ backgroundColor: '#fff' }}>
+                <View style={{ backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <TouchableOpacity>
                   <Button
+                    transparent
                     onPress={() =>
                 ActionSheet.show(
                 {
@@ -123,11 +151,14 @@ class Story extends Component {
                 title: 'Testing ActionSheet',
                 },
                 buttonIndex => {
+                  if(buttonIndex === 0){
+                    this._pickImage();
+                  }
                 this.setState({ clicked: EDITPROJECTBUTTONS[buttonIndex] });
                 }
                 )}
                 >
-                <Text>Edit Project</Text>
+                <Icon name="ios-add" />
                 </Button>
                 </TouchableOpacity>
                 <View style={styles.newsContent}>
