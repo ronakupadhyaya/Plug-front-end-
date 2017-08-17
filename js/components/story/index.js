@@ -203,7 +203,7 @@ class Story extends Component {
                       </TouchableOpacity>
                     </Col>
                   {/* </Grid> */}
-                   <Text style={styles.newsHeader}>
+                   <Text>
                     Santa Monica
                   </Text>
                   <Text style={styles.newsHeader}>

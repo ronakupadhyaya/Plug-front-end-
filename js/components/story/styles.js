@@ -30,7 +30,8 @@ export default {
     backgroundColor: 'black',
     borderRadius:10,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: '#fff',
+    overflow: 'hidden'
   },
   newsCommentContainer: {
     paddingLeft: 20,
