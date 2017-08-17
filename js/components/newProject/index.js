@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 
 import { Actions } from 'react-native-router-flux';
 
-import { Container, Content, Text, Button, Icon, Item, Input, View, Header, Form, } from 'native-base';
+import { Container, Content, Text, Button, Icon, Item, Input, View, Header, Form, Picker} from 'native-base';
 
 import styles from './styles';
 import commonColor from '../../../native-base-theme/variables/commonColor';
 
-class NewProject extends Component {
+const PickerItem = Picker.Item
 
+class NewProject extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +20,8 @@ class NewProject extends Component {
         y: 0,
       },
       name: '',
-      description: ''
+      description: '',
+      selected1: "Category"
     };
     this.constructor.childContextTypes = {
       theme: React.PropTypes.object,
@@ -55,8 +57,13 @@ class NewProject extends Component {
         console.log('Error in newProject', err);
       });
     }
-
   }
+
+  onValueChange(value: string) {
+   this.setState({
+     selected1: value
+   });
+ }
 
   render() {
 
@@ -67,38 +74,64 @@ class NewProject extends Component {
           barStyle="light-content"
         />
         <Image source={require('../../../images/glow2.png')} style={styles.background} >
-          <Content padder>
-            <Text style={styles.signupHeader}>
-                                    New Project
-                                </Text>
+          <Content >
+            <Text style={styles.signupHeader}>New Project</Text>
             <View style={styles.signupContainer}>
 
 
       <Content>
         <Form>
-          <Item>
+          <Item last style={styles.itemContainer} >
+            <Icon name='star' />
             <Input
               placeholder="Name"
               onChangeText={ (name) => this.setState({ name: name }) }
+              style={{color: '#FFF'}}
             />
           </Item>
-          <Item last>
+          <Item last style={styles.itemContainer}>
+            <Icon name='paper'/>
             <Input
-              placeholder="Description"
+                placeholder="Description"
               onChangeText={ (description) => this.setState({ description: description }) }
+              style={{color: '#FFF'}}
             />
           </Item>
-          <Item last>
-            <Input placeholder="Add Cover Photo" />
+          <Item last style={styles.itemContainer}>
+            <Icon name='options'/>
+            <Content>
+            <Form>
+              <Picker
+                iosHeader="Select one"
+                mode="dropdown"
+                selectedValue={this.state.selected1}
+                onValueChange={this.onValueChange.bind(this)}
+              >
+                <PickerItem label="Sports" value="SPORTS"  />
+                <PickerItem label="Movies" value="MOVIES" />
+                <PickerItem label="Fashion" value="FASHION" />
+                <PickerItem label="Science" value="SCIENCE" />
+                <PickerItem label="Auto" value="AUTO" />
+                <PickerItem label="Technology" value="TECHNOLOGY" />
+                <PickerItem label="Finances" value="FINANCES" />
+                <PickerItem label="Art" value="ART" />
+                <PickerItem label="Animation" value="ANIMATION" />
+                <PickerItem label="Education" value="EDUCATION" />
+                <PickerItem label="Environment" value="ENVIRONMENT" />
+                <PickerItem label="World" value="WORLD" />
+              </Picker>
+            </Form>
+            </Content>
           </Item>
-          <Item last>
-            <Input placeholder="Add Content" />
+          <Item last style={styles.itemContainer}>
+            <Icon name='image'/>
+            <Input placeholder="Add Photo" />
           </Item>
         </Form>
       </Content>
 
       <TouchableOpacity
-        style={{ flexDirection: 'row' }}
+        style={styles.createProj}
         // onPress={() => Actions.story()}
         onPress={() => this.onNewProject()}
       >

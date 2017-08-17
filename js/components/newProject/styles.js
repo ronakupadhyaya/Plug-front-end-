@@ -18,10 +18,17 @@ export default {
   signupHeader: {
     alignSelf: 'center',
     fontSize: 22,
-    padding: 10,
+    padding: 1,
     fontWeight: 'bold',
     color: '#FFF',
-    marginTop: Platform.OS === 'android' ? (deviceHeight / 6) : ((deviceHeight / 6) + 10),
+    marginTop: Platform.OS === 'android' ? (deviceHeight / 10) : ((deviceHeight / 10) + 10),
+  },
+  itemContainer: {
+    marginTop: 15,
+    marginBottom: 15,
+  },
+  createProj: {
+    marginTop: 15,
   },
   background: {
     flex: 1,
