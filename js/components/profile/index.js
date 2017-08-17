@@ -80,7 +80,7 @@ class Profile extends Component {
 
    if (!result.cancelled) {
      this.setState({ image: result.uri });
-     
+
    }
  };
 
@@ -95,7 +95,9 @@ class Profile extends Component {
           <Content showsVerticalScrollIndicator={false}>
             <View style={styles.profileInfoContainer}>
               <TouchableOpacity style={{ alignSelf: 'center' }}>
-                <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic}>
+
+
+                {/* <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic}>
                 <Button style={{ alignSelf: 'center', backgroundColor: 'transparent', flex: 1, width: 100 }}
                     onPress={() =>
                       ActionSheet.show(
@@ -113,9 +115,55 @@ class Profile extends Component {
               }
             )}
                 >
-            {/* <Icon name="ios-settings-outline" /> */}
           </Button>
-                </Thumbnail>
+                </Thumbnail> */}
+
+
+                {image ? (
+                  <Thumbnail source={{ uri: image }} style={styles.profilePic}>
+                  <Button style={{ alignSelf: 'center', backgroundColor: 'transparent', flex: 1, width: 100 }}
+                    onPress={() =>
+                      ActionSheet.show(
+                        {
+                          options: PROFILEBUTTONS,
+                          cancelButtonIndex: CANCEL_INDEX,
+                          title: 'Testing ActionSheet',
+                        },
+                        buttonIndex => {
+                          console.log(buttonIndex);
+                          if(buttonIndex === 0){
+                            this._pickImage();
+                          }
+                          this.setState({ clicked: PROFILEBUTTONS[buttonIndex] });
+                        }
+                      )}
+                      >
+                      </Button>
+                    </Thumbnail>
+                  ) : (
+                    <Thumbnail source={require('../../../images/contacts/theWest.png')} style={styles.profilePic}>
+                    <Button style={{ alignSelf: 'center', backgroundColor: 'transparent', flex: 1, width: 100 }}
+                      onPress={() =>
+                        ActionSheet.show(
+                          {
+                            options: PROFILEBUTTONS,
+                            cancelButtonIndex: CANCEL_INDEX,
+                            title: 'Testing ActionSheet',
+                          },
+                          buttonIndex => {
+                            console.log(buttonIndex);
+                            if(buttonIndex === 0){
+                              this._pickImage();
+                            }
+                            this.setState({ clicked: PROFILEBUTTONS[buttonIndex] });
+                          }
+                        )}
+                        >
+                        </Button>
+                      </Thumbnail>
+                    )}
+
+
               </TouchableOpacity>
               <View style={styles.profileInfo}>
                 <TouchableOpacity>
