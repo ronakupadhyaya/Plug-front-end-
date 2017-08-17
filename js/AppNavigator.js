@@ -96,7 +96,7 @@ class AppNavigator extends Component {
             <Scene key="login" component={Login} hideNavBar />
             <Scene key="signUp" component={SignUp} />
             <Scene key="needhelp" component={NeedHelp} />
-            <Scene key="home" component={Home} />
+            <Scene key="home" component={Home} initial={true}/>
             <Scene key="feedback" component={Feedback} />
             <Scene key="comments" component={Comments} />
             <Scene key="profile" component={Profile} />
@@ -111,7 +111,7 @@ class AppNavigator extends Component {
             <Scene key="timeline" component={Timeline} />
             <Scene key="widgets" component={Widgets} />
             <Scene key="newProject" component={NewProject} />
-            <Scene key="searchCollab" component={SearchCollab}  initial={true}/>
+            <Scene key="searchCollab" component={SearchCollab} />
           </Scene>
         </RouterWithRedux>
       </Drawer>
