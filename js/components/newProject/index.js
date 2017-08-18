@@ -32,7 +32,7 @@ class NewProject extends Component {
     console.log("In onNewProject");
 
     if(this.state.name) {
-      fetch('https://4b11eba2.ngrok.io/project/new', {
+      fetch('https://7906d89c.ngrok.io/project/new', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
         method: 'POST',
         headers: {

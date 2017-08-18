@@ -50,6 +50,7 @@ export default {
     fontWeight: '500',
     fontSize: 14,
     padding: 8,
+    alignSelf: 'center'
   },
   newsLink: {
     color: '#666',

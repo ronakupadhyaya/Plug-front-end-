@@ -28,7 +28,7 @@ class SearchCollab extends Component {
 
   onNewCollaborator() {
     console.log(this.state.contributor, this.props.project);
-    fetch('https://4b11eba2.ngrok.io/add_contributor', {
+    fetch('https://7906d89c.ngrok.io/add_contributor', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
       method: 'POST',
       headers: {

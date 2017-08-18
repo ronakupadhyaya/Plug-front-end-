@@ -115,4 +115,5 @@ function bindAction(dispatch) {
 const mapStateToProps = state => ({
   drawerState: state.drawer.drawerState,
 });
+
 export default connect(mapStateToProps, bindAction)(AppNavigator);

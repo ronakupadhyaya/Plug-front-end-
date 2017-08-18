@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Image, View, TouchableOpacity, Platform, Slider, Dimensions, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
@@ -52,7 +53,10 @@ class Story extends Component {
       value: 0,
       image: null,
       modalVisible: false,
-      important: []
+      important: [{
+        'username': 'default',
+      }],
+      correct: {}
     };
   }
 
@@ -62,13 +66,41 @@ class Story extends Component {
     }),
   }
 
-  componentWillMount() {
-    console.log("Story");
-    if(this.props.project) {
-        console.log("componentWillMount", this.props.project);
-    }
+  componentDidMount() {
+    // console.log(this.state);
+    // console.log("Story");
+    // if(this.props.project) {
+    //     console.log("componentWillMount", this.props.project);
+    // }
+    //
+    // fetch('https://7906d89c.ngrok.io/contributors', {
+    //   // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
+    //   method: 'POST',
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     project: this.props.project,
+    //   })
+    // })
+    // .then((response) => response.json())
+    // .then((responseJson) => {
+    //   console.log("responseJson in story", responseJson);
+    //   if(responseJson.success){
+    //     console.log("Successful");
+    //     this.setState({important: responseJson.contributors});
+    //
+    //   }
+    // })
+    // .catch((err) => {
+    //   console.log('Error in story', err);
+    // });
 
-    fetch('https://4b11eba2.ngrok.io/contributors', {
+  }
+
+  componentDidMount() {
+    console.log("componentWillMount");
+    fetch('https://7906d89c.ngrok.io/project/one', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
       method: 'POST',
       headers: {
@@ -80,17 +112,38 @@ class Story extends Component {
     })
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log("responseJson in story", responseJson);
-      /* do something with responseJson and go back to the Login view but
-      * make sure to check for responseJson.success! */
       if(responseJson.success){
-        console.log(responseJson);
-        this.setState({important: responseJson.contributors});
+        console.log("Here");
+        this.setState({correct: responseJson.correct});
+
+
+        fetch('https://7906d89c.ngrok.io/contributors', {
+          // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            project: this.state.correct,
+          })
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+          console.log("responseJson in story", responseJson);
+          if(responseJson.success){
+            console.log("Successful", responseJson);
+            this.setState({important: responseJson.contributors});
+
+          }
+        })
+        .catch((err) => {
+          console.log('Error in story', err);
+        });
+
 
       }
     })
     .catch((err) => {
-      /* do something if there was an error with fetching */
       console.log('Error in story', err);
     });
 
@@ -115,7 +168,6 @@ class Story extends Component {
 
    if (!result.cancelled) {
      this.setState({ image: result.uri });
-
    }
  };
 
@@ -126,8 +178,10 @@ class Story extends Component {
   render() {
     let { image } = this.state;
     console.log("Image", image);
+    console.log("Finally", this.state.important);
+    console.log("Finally2", this.state.important[0].username);
+    console.log("Finally2", typeof this.state.important[0]);
     return (
-
       <Container style={{ backgroundColor: '#fff' }}>
 
 
@@ -164,9 +218,9 @@ class Story extends Component {
                   <Image source={{ uri: image }}  style={styles.newsPoster} >
                     <TouchableOpacity>
                       <View style={styles.newsPosterContent}>
-                        <Text numberOfLines={2} style={styles.newsPosterHeader}>
+                        {/* <Text numberOfLines={2} style={styles.newsPosterHeader}>
                           Flat App Theme
-                        </Text>
+                        </Text> */}
                       </View>
                     </TouchableOpacity>
                   </Image>
@@ -223,11 +277,11 @@ class Story extends Component {
                       </TouchableOpacity>
                     </Col>
                   {/* </Grid> */}
-                   <Text>
+                   <Text style={styles.newsComment}>
                     Santa Monica
                   </Text>
                   <Text style={styles.newsHeader}>
-                    A bright shoot in SM. Show with a Sony A7 w/ a 50mm 1.8 lens
+                    A bright shoot in SM. Shot with a Sony A7 w/ a 50mm 1.8 lens
                   </Text>
                 </View>
 
@@ -242,7 +296,12 @@ class Story extends Component {
                     <Text style={styles.newsComment}>
                       Jilando - photographer
                     </Text>
-                    {this.}
+                    {this.state.important.map(i => {
+                      <Text style={styles.newsComment}>
+                      {i.username} - Finesse Master
+                      </Text>
+                    }
+                  )}
                   </View>
                   {/* <Text style={styles.newsHeader}>
                     ok
@@ -285,10 +344,10 @@ class Story extends Component {
                   </Swiper>
                 </View>
 
-                <View style={{ alignSelf: 'center' }}>
-                  <Button transparent iconRight onPress={() => Actions.popTo('home')} textStyle={{ color: '#222', fontWeight: '700' }}>
-                    <Text>NEXT STORY</Text>
-                    <Icon name="ios-arrow-forward" style={styles.forwardBtn} />
+                <View style={{ alignSelf: 'center', padding: 15 }}>
+                  <Button transparent iconRight onPress={() => Actions.popTo('home')} textStyle={{ color: '#222', fontWeight: '700' }} style={{backgroundColor: 'black', padding: 20}}>
+                    <Text style={{color: 'white', alignSelf: 'center'}}>NEXT STORY</Text>
+                    {/* <Icon name="ios-arrow-forward" style={styles.forwardBtn} /> */}
                   </Button>
                 </View>
               </View>
@@ -363,6 +422,7 @@ class Story extends Component {
         </Image>
       </Container>
     );
+
   }
 }
 
