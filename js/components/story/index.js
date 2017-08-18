@@ -136,9 +136,9 @@ class Story extends Component {
                   <Image source={{ uri: image }}  style={styles.newsPoster} >
                     <TouchableOpacity>
                       <View style={styles.newsPosterContent}>
-                        <Text numberOfLines={2} style={styles.newsPosterHeader}>
+                        {/* <Text numberOfLines={2} style={styles.newsPosterHeader}>
                           Flat App Theme
-                        </Text>
+                        </Text> */}
                       </View>
                     </TouchableOpacity>
                   </Image>
