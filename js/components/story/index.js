@@ -85,6 +85,7 @@ class Story extends Component {
       * make sure to check for responseJson.success! */
       if(responseJson.success){
         console.log(responseJson);
+        this.setState({important: responseJson.contributors});
 
       }
     })
