@@ -68,7 +68,7 @@ class Story extends Component {
         console.log("componentWillMount", this.props.project);
     }
 
-    fetch('https://4b11eba2.ngrok.io/contributors', {
+    fetch('https://7906d89c.ngrok.io/contributors', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
       method: 'POST',
       headers: {
@@ -84,7 +84,8 @@ class Story extends Component {
       /* do something with responseJson and go back to the Login view but
       * make sure to check for responseJson.success! */
       if(responseJson.success){
-        console.log(responseJson);
+        this.setState(important: responseJson.contributors);
+        console.log("State", this.state);
 
       }
     })
@@ -114,7 +115,6 @@ class Story extends Component {
 
    if (!result.cancelled) {
      this.setState({ image: result.uri });
-
    }
  };
 
@@ -241,7 +241,7 @@ class Story extends Component {
                     <Text style={styles.newsComment}>
                       Jilando - photographer
                     </Text>
-                    {this.}
+
                   </View>
                   {/* <Text style={styles.newsHeader}>
                     ok

@@ -54,7 +54,7 @@ class Profile extends Component {
   componentWillMount() {
 
     // fetch('https://polar-forest-14512.herokuapp.com/projects')
-    fetch('https://4b11eba2.ngrok.io/projects')
+    fetch('https://7906d89c.ngrok.io/projects')
     .then((responseJson) => {
       return responseJson.json();
     })
