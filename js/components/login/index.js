@@ -31,7 +31,7 @@ class Login extends Component {
 
   onLogin() {
     console.log("In login");
-    fetch('https://9fff3071.ngrok.io/login', {
+    fetch('https://4b11eba2.ngrok.io/login', {
     // fetch('https://polar-forest-14512.herokuapp.com/login', {
       method: 'POST',
       headers: {

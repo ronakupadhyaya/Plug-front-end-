@@ -27,7 +27,8 @@ class SearchCollab extends Component {
   }
 
   onNewCollaborator() {
-    fetch('https://0a4f6e79.ngrok.io/add_contributor', {
+    console.log(this.state.contributor, this.props.project);
+    fetch('https://4b11eba2.ngrok.io/add_contributor', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
       method: 'POST',
       headers: {
@@ -40,16 +41,16 @@ class SearchCollab extends Component {
     })
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log("responseJson", responseJson);
+      console.log("responseJson in searchCollab", responseJson);
       /* do something with responseJson and go back to the Login view but
       * make sure to check for responseJson.success! */
       if(responseJson.success){
-        Actions.pop()
+        Actions.story({project: responseJson.project2})
       }
     })
     .catch((err) => {
       /* do something if there was an error with fetching */
-      console.log('Error in newProject', err);
+      console.log('Error in searchCollab', err);
     });
   }
 

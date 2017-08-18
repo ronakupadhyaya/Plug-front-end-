@@ -4,9 +4,7 @@ import { StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { Drawer } from 'native-base';
 import { Router, Scene } from 'react-native-router-flux';
-
 import { closeDrawer } from './actions/drawer';
-
 import Login from './components/login/';
 import Home from './components/home/';
 import SignUp from './components/sign-up/';
@@ -27,37 +25,28 @@ import NeedHelp from './components/needhelp';
 import NewProject from './components/newProject';
 import SearchCollab from './components/searchCollab'
 import { statusBarColor } from './themes/base-theme';
-
 const RouterWithRedux = connect()(Router);
-
 class AppNavigator extends Component {
-
   static propTypes = {
     drawerState: React.PropTypes.string,
     closeDrawer: React.PropTypes.func,
   }
-
   componentDidUpdate() {
     if (this.props.drawerState === 'opened') {
       this.openDrawer();
     }
-
     if (this.props.drawerState === 'closed') {
       this._drawer._root.close();
     }
   }
-
   openDrawer() {
     this._drawer._root.open();
   }
-
   closeDrawer() {
     if (this.props.drawerState === 'opened') {
       this.props.closeDrawer();
     }
   }
-
-
   render() {  // eslint-disable-line class-methods-use-this
     return (
       <Drawer
@@ -96,7 +85,7 @@ class AppNavigator extends Component {
             <Scene key="login" component={Login} hideNavBar initial={true} />
             <Scene key="signUp" component={SignUp} />
             <Scene key="needhelp" component={NeedHelp} />
-            <Scene key="home" component={Home} initial={true}/>
+            <Scene key="home" component={Home} />
             <Scene key="feedback" component={Feedback} />
             <Scene key="comments" component={Comments} />
             <Scene key="profile" component={Profile} />
@@ -118,15 +107,12 @@ class AppNavigator extends Component {
     );
   }
 }
-
 function bindAction(dispatch) {
   return {
     closeDrawer: () => dispatch(closeDrawer()),
   };
 }
-
 const mapStateToProps = state => ({
   drawerState: state.drawer.drawerState,
 });
-
 export default connect(mapStateToProps, bindAction)(AppNavigator);
