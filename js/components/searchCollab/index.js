@@ -19,44 +19,39 @@ class SearchCollab extends Component {
         x: 0,
         y: 0,
       },
-      name: '',
-      description: '',
-      selected1: "Category"
+      contributor: ''
     };
     this.constructor.childContextTypes = {
       theme: React.PropTypes.object,
     };
   }
 
-  onNewProject() {
-    console.log("In onNewProject");
-
-    if(this.state.name) {
-      fetch('https://0a4f6e79.ngrok.io/project/new', {
+  onNewCollaborator() {
+    console.log(this.state.contributor, this.props.project);
+    fetch('https://4b11eba2.ngrok.io/add_contributor', {
       // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: this.state.name,
-          description: this.state.description,
-        })
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        contributor: this.state.contributor,
+        project: this.props.project,
       })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        console.log("responseJson", responseJson);
-        /* do something with responseJson and go back to the Login view but
-        * make sure to check for responseJson.success! */
-        if(responseJson.success){
-          Actions.profile()
-        }
-      })
-      .catch((err) => {
-        /* do something if there was an error with fetching */
-        console.log('Error in newProject', err);
-      });
-    }
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("responseJson in searchCollab", responseJson);
+      /* do something with responseJson and go back to the Login view but
+      * make sure to check for responseJson.success! */
+      if(responseJson.success){
+        Actions.story({project: responseJson.project2})
+      }
+    })
+    .catch((err) => {
+      /* do something if there was an error with fetching */
+      console.log('Error in searchCollab', err);
+    });
   }
 
   onValueChange(value: string) {
@@ -85,7 +80,7 @@ class SearchCollab extends Component {
             <Icon name='ios-search' />
             <Input
               placeholder="Add Collaborator"
-              onChangeText={ (name) => this.setState({ name: name }) }
+              onChangeText={ (contributor) => this.setState({ contributor: contributor }) }
               style={{color: '#FFF'}}
             />
           </Item>
@@ -95,7 +90,7 @@ class SearchCollab extends Component {
       <TouchableOpacity
         style={styles.createProj}
         // onPress={() => Actions.story()}
-        onPress={() => this.onNewProject()}
+        onPress={() => this.onNewCollaborator()}
       >
           <Text> Submit </Text>
       </TouchableOpacity>

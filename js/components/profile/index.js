@@ -54,7 +54,7 @@ class Profile extends Component {
   componentWillMount() {
 
     // fetch('https://polar-forest-14512.herokuapp.com/projects')
-    fetch('https://9fff3071.ngrok.io/projects')
+    fetch('https://4b11eba2.ngrok.io/projects')
     .then((responseJson) => {
       return responseJson.json();
     })
@@ -96,7 +96,7 @@ class Profile extends Component {
             <View style={styles.profileInfoContainer}>
               <TouchableOpacity style={{ alignSelf: 'center' }}>
 
-              
+
 
                 {image ? (
                   <Thumbnail source={{ uri: image }} style={styles.profilePic}>

@@ -52,6 +52,7 @@ class Story extends Component {
       value: 0,
       image: null,
       modalVisible: false,
+      important: []
     };
   }
 
@@ -66,6 +67,32 @@ class Story extends Component {
     if(this.props.project) {
         console.log("componentWillMount", this.props.project);
     }
+
+    fetch('https://4b11eba2.ngrok.io/contributors', {
+      // fetch('https://polar-forest-14512.herokuapp.com/project/new', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        project: this.props.project,
+      })
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log("responseJson in story", responseJson);
+      /* do something with responseJson and go back to the Login view but
+      * make sure to check for responseJson.success! */
+      if(responseJson.success){
+        console.log(responseJson);
+
+      }
+    })
+    .catch((err) => {
+      /* do something if there was an error with fetching */
+      console.log('Error in story', err);
+    });
+
 
   }
 
@@ -179,7 +206,7 @@ class Story extends Component {
                     this._pickImage();
                   }
                   else if(buttonIndex === 2){
-                    Actions.searchCollab();
+                    Actions.searchCollab({project: this.props.project});
                   }
                 this.setState({ clicked: EDITPROJECTBUTTONS[buttonIndex] });
                 }
@@ -189,14 +216,6 @@ class Story extends Component {
                 </Button>
                 </TouchableOpacity>
                 <View style={styles.newsContent}>
-                  {/* <Grid style={{ paddingBottom: 20 }}> */}
-                    {/* <Col style={{ flexDirection: 'row' }}>
-                      <TouchableOpacity>
-                        <Text style={styles.newsLink}>CDC</Text>
-                      </TouchableOpacity>
-                      <Icon name="ios-time-outline" style={styles.timeIcon} />
-                      <Text style={styles.newsLink}>1h ago</Text>
-                    </Col> */}
                     <Col>
                       <TouchableOpacity style={styles.newsTypeView}>
                         <Text style={styles.newsTypeText}>PHOTOSHOOT</Text>
@@ -222,6 +241,7 @@ class Story extends Component {
                     <Text style={styles.newsComment}>
                       Jilando - photographer
                     </Text>
+                    {this.}
                   </View>
                   {/* <Text style={styles.newsHeader}>
                     ok
