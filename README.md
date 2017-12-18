@@ -1,15 +1,12 @@
-## React Native Flat App Theme v7.0.0
+## Plug
 
-Thanks for purchasing the React Native Flat App Theme.
+To run the app, run this command:  
+```
+npm install  
+npm run dev  
+```
+Wait for the webpack to fully start if nothing shows up. Refresh once completed and you should see results. 
 
-Follow the documentation to install and get started with the development:
+# Overview
+The current environment polarizes between personal users & content creators. The dichotomy makes it hard to sift through noise & find people to create with. Plug is a collaborative platform for the profusion of nouveaux content creators born on Youtube, IG, & other media outlets
 
--   [Documentation](http://docs.market.nativebase.io/react-native-flat-app-ui/)
--   [Product Page](https://market.nativebase.io/view/react-native-flat-app-theme)
--	[Change Log](http://gitstrap.com/strapmobile/FlatApp/blob/v7.0.0/ChangeLog.md)
--	[License Page](https://market.nativebase.io/licenses)
-
-Please do check `FAQs` section in docs for queries.
-
-Happy coding!
-# Frontend-Final
